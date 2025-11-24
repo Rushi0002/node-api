@@ -7,6 +7,8 @@ const router = Router();
 /**
  * Route route
  */
+import authRoutes from '@/routes/v1/auth';
+
 router.get('/', (req, res) => {
   res.status(200).json({
     message: 'API is live',
@@ -15,5 +17,7 @@ router.get('/', (req, res) => {
     timestamp: new Date().toISOString(),
   });
 });
+
+router.use('/auth', authRoutes);
 
 export default router;
